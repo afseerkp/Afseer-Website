@@ -53,15 +53,12 @@ SITE_CERTS = [
     ("NW", "Advanced Networking", "Government ITI, Kasaragod", False),
 ]
 
-NAV = [("about", "About"), ("bizapp365", "BizApp365"), ("experience", "Experience"),
-       ("skills", "Skills"), ("certifications", "Certifications"), ("contact", "Contact")]
+NAV = [("about", "About"), ("bizapp365", "BizApp365"),
+       ("skills", "Skills"), ("certifications", "Certifications")]
 
-EMAIL = "mail@afseer.com"
-PHONE = "+971 58 288 5633"
 LOCATION = "Dubai, United Arab Emirates"
 
 product = C.EXPERIENCE[0]          # BizApp365 gets its own feature section
-history = C.EXPERIENCE[1:]         # everything else goes in the timeline
 name_title = C.NAME_DISPLAY
 
 
@@ -91,19 +88,6 @@ modules_html = "\n".join(
 
 product_points = "\n".join(
     f"            <li>{e(b)}</li>" for b in product["bullets"][1:4]
-)
-
-jobs_html = "\n".join(
-    f'''        <article class="job reveal">
-          <div class="job-head">
-            <h3>{e(job["title"])}</h3>
-            <span class="when">{e(job["dates"])}</span>
-          </div>
-          <p class="where">{e(job["display"])} \u2014 {e(job["location"])}</p>
-          <ul>
-{chr(10).join(f"            <li>{e(b)}</li>" for b in job["bullets"])}
-          </ul>
-        </article>''' for job in history
 )
 
 skills_html = "\n".join(
@@ -148,8 +132,6 @@ HTML = f"""<!doctype html>
   "@type": "Person",
   "name": "{e(name_title)}",
   "jobTitle": "IT Team Lead",
-  "email": "mailto:{EMAIL}",
-  "telephone": "{PHONE}",
   "url": "{SITE_URL}/",
   "address": {{ "@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE" }},
   "worksFor": {{ "@type": "Organization", "name": "OMNIX International LLC" }},
@@ -165,7 +147,7 @@ HTML = f"""<!doctype html>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-links">
 {nav_links}
-      <a class="btn btn-primary btn-sm" href="{CV_FILE}" download>Download CV</a>
+      <a class="btn btn-primary btn-sm locked-cv" href="{CV_FILE}" download data-locked="cv">Download CV</a>
     </nav>
   </div>
 </header>
@@ -180,13 +162,10 @@ HTML = f"""<!doctype html>
         <p class="role">IT Team Lead &nbsp;\u00b7&nbsp; DevOps &amp; Cloud (Azure / AWS) &nbsp;\u00b7&nbsp; Founder of BizApp365</p>
         <p class="lede">Fifteen years building and running IT infrastructure across the UAE and India \u2014 now leading an IT team in Dubai, automating delivery with Azure and AWS DevOps pipelines, and shipping my own multi-tenant cloud ERP platform.</p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#contact">Get in touch</a>
-          <a class="btn btn-ghost" href="{CV_FILE}" download>Download CV (PDF)</a>
+          <a class="btn btn-primary locked-cv" href="{CV_FILE}" download data-locked="cv">Download CV (PDF)</a>
         </div>
         <div class="hero-meta">
           <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>{e(LOCATION)}</span>
-          <a href="mailto:{EMAIL}"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6 12 13 2 6"/></svg>{EMAIL}</a>
-          <a href="tel:{PHONE.replace(' ', '')}"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>{PHONE}</a>
         </div>
       </div>
       <div class="stats">
@@ -225,19 +204,6 @@ HTML = f"""<!doctype html>
     </div>
   </section>
 
-  <section id="experience">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="kicker">Experience</p>
-        <h2>Career history</h2>
-        <p>From hands-on support engineer to leading an IT team in Dubai, across manufacturing, education, retail and managed services.</p>
-      </div>
-      <div class="timeline">
-{jobs_html}
-      </div>
-    </div>
-  </section>
-
   <section id="skills" style="background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <div class="wrap">
       <div class="section-head reveal">
@@ -262,36 +228,38 @@ HTML = f"""<!doctype html>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="kicker">Contact</p>
-        <h2>Let's talk</h2>
-        <p>Open to IT leadership, DevOps and cloud engineering roles in the UAE, and to ERP projects for growing businesses.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-card reveal">
-          <span>Email</span><a href="mailto:{EMAIL}">{EMAIL}</a>
-        </div>
-        <div class="contact-card reveal">
-          <span>Phone</span>
-          <a href="tel:{PHONE.replace(' ', '')}">{PHONE}</a>
-        </div>
-        <div class="contact-card reveal">
-          <span>Location</span><b>{e(LOCATION)}</b>
-        </div>
-      </div>
-      <a class="btn btn-primary" href="{CV_FILE}" download>Download full CV (PDF)</a>
-      <footer>
-        <div class="foot-inner">
-          <span>\u00a9 <span id="year"></span> {e(name_title)}</span>
-          <span>Languages: {e(C.LANGUAGES.replace('  |  ', ', '))}</span>
-        </div>
-      </footer>
-    </div>
-  </section>
-
 </main>
+
+<footer class="site-footer">
+  <div class="wrap foot-inner">
+    <span>\u00a9 <span id="year"></span> {e(name_title)}</span>
+    <span>Languages: {e(C.LANGUAGES.replace('  |  ', ', '))}</span>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/971582885633" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </svg>
+</a>
+
+<div class="lock-modal" id="lockModal" hidden>
+  <div class="lock-modal-backdrop" data-lock-close></div>
+  <div class="lock-dialog" role="dialog" aria-modal="true" aria-labelledby="lockTitle">
+    <button type="button" class="lock-close" data-lock-close aria-label="Close">&times;</button>
+    <div class="lock-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </div>
+    <h3 id="lockTitle">Protected content</h3>
+    <p>Please enter the password. To obtain the password, please contact me via WhatsApp.</p>
+    <form id="lockForm" autocomplete="off">
+      <label class="visually-hidden" for="lockPassword">Password</label>
+      <input id="lockPassword" type="password" name="password" placeholder="Enter password" required autocomplete="current-password">
+      <p class="lock-error" id="lockError" hidden>Incorrect password. Please try again.</p>
+      <button type="submit" class="btn btn-primary">Unlock</button>
+    </form>
+  </div>
+</div>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script src="script.js"></script>
