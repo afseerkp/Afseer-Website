@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
@@ -30,214 +30,233 @@
 </head>
 <body>
 
-<header class="nav">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="nav" id="siteNav">
   <div class="wrap nav-inner">
-    <a href="#top" class="brand">Afseer<span>.</span></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#bizapp365">BizApp365</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
-      <a class="btn btn-primary btn-sm locked-cv" href="Afseer-KP-CV.pdf" download data-locked="cv">Download CV</a>
+    <a href="#top" class="brand" aria-label="Afseer KP home">Afseer<span>.</span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="primaryNav" aria-label="Primary">
+      <a href="#about" data-nav>About</a>
+      <a href="#bizapp365" data-nav>BizApp365</a>
+      <a href="#skills" data-nav>Skills</a>
+      <a href="#certifications" data-nav>Certifications</a>
+      <a class="btn btn-primary btn-sm locked-cv" href="Afseer-KP-CV.pdf" download data-locked="cv">
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Download CV
+      </a>
     </nav>
   </div>
 </header>
 
-<main id="top">
+<main id="main">
+  <div id="top"></div>
 
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow"><span class="dot"></span> Available for senior IT &amp; DevOps roles</span>
-        <h1>Afseer KP</h1>
-        <p class="role">IT Team Lead &nbsp;·&nbsp; DevOps &amp; Cloud (Azure / AWS) &nbsp;·&nbsp; Founder of BizApp365</p>
-        <p class="lede">Fifteen years building and running IT infrastructure across the UAE and India — now leading an IT team in Dubai, automating delivery with Azure and AWS DevOps pipelines, and shipping my own multi-tenant cloud ERP platform.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary locked-cv" href="Afseer-KP-CV.pdf" download data-locked="cv">Download CV (PDF)</a>
-        </div>
-        <div class="hero-meta">
-          <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Dubai, United Arab Emirates</span>
-        </div>
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+    <div class="wrap hero-content">
+      <p class="eyebrow reveal">
+        <span class="status-dot" aria-hidden="true"></span>
+        Available for senior IT &amp; DevOps roles
+      </p>
+      <h1 class="reveal">Afseer KP</h1>
+      <p class="role reveal">IT Team Lead · DevOps &amp; Cloud · Founder of BizApp365</p>
+      <p class="lede reveal">Fifteen years building and running IT infrastructure across the UAE and India — now leading delivery with Azure and AWS DevOps pipelines, and shipping a multi-tenant cloud ERP.</p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary locked-cv" href="Afseer-KP-CV.pdf" download data-locked="cv">
+          <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Download CV
+        </a>
+        <a class="btn btn-secondary" href="#bizapp365">View product</a>
       </div>
-      <div class="stats">
-          <div class="stat reveal">
-            <b>15+</b><span>Years in IT infrastructure</span>
-          </div>
-          <div class="stat reveal">
-            <b>2</b><span>Expert-level DevOps certifications</span>
-          </div>
-          <div class="stat reveal">
-            <b>1</b><span>Cloud ERP product built end to end</span>
-          </div>
+      <p class="hero-meta reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Dubai, United Arab Emirates
+      </p>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="Highlights">
+    <div class="wrap proof-grid">
+      <div class="proof-item reveal">
+        <strong>15+</strong>
+        <span>Years in IT infrastructure</span>
+      </div>
+      <div class="proof-item reveal">
+        <strong>2</strong>
+        <span>Expert-level DevOps certifications</span>
+      </div>
+      <div class="proof-item reveal">
+        <strong>1</strong>
+        <span>Cloud ERP built end to end</span>
       </div>
     </div>
   </section>
 
   <section id="about">
-    <div class="wrap">
+    <div class="wrap about-grid">
       <div class="section-head reveal">
         <p class="kicker">About</p>
         <h2>Infrastructure engineer who ships software</h2>
       </div>
-      <div class="card reveal" style="padding:1.9rem 2.1rem">
-        <p style="color:var(--muted)">IT Team Lead with over 15 years of experience in IT infrastructure, systems administration, networking and end-user support, currently leading the IT function at OMNIX International LLC in Dubai. Microsoft Certified DevOps Engineer Expert (AZ-400) and AWS Certified DevOps Engineer - Professional, with hands-on experience building CI/CD pipelines, automating infrastructure and administering Azure and AWS environments. Independently designed and built BizApp365, a multi-tenant cloud ERP platform for small and medium businesses covering accounting, inventory, CRM, HR and VAN sales. Specialises in integrating AI-driven automation into IT service workflows to reduce manual effort and shorten resolution times, and combines hands-on software development with proven strength in leading technical teams, managing vendors and standardising infrastructure across multi-site operations.</p>
-        <p style="margin-top:1.2rem;font-size:.83rem;font-weight:700;color:var(--navy)">IT Team Leadership &amp; Mentoring  ·  DevOps &amp; CI/CD Pipeline Delivery  ·  Cloud Administration (Azure, AWS)  ·  SaaS Product Development  ·  Full-Stack Web Development  ·  AI-Driven Process Automation</p>
+      <div class="about-body reveal">
+        <p>IT Team Lead with over 15 years of experience in IT infrastructure, systems administration, networking and end-user support, currently leading the IT function at OMNIX International LLC in Dubai. Microsoft Certified DevOps Engineer Expert (AZ-400) and AWS Certified DevOps Engineer - Professional, with hands-on experience building CI/CD pipelines, automating infrastructure and administering Azure and AWS environments.</p>
+        <p>Independently designed and built BizApp365, a multi-tenant cloud ERP platform for small and medium businesses covering accounting, inventory, CRM, HR and VAN sales. Specialises in integrating AI-driven automation into IT service workflows to reduce manual effort and shorten resolution times.</p>
+        <ul class="focus-list">
+          <li>IT Team Leadership &amp; Mentoring</li>
+          <li>DevOps &amp; CI/CD Pipeline Delivery</li>
+          <li>Cloud Administration (Azure, AWS)</li>
+          <li>SaaS Product Development</li>
+          <li>Full-Stack Web Development</li>
+          <li>AI-Driven Process Automation</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <section id="bizapp365" class="product">
-    <div class="wrap product-hero">
-      <div class="reveal">
-        <span class="product-badge">● My own product</span>
-        <h2>BizApp365 — cloud ERP for growing SMEs</h2>
-        <p class="lede">Independently designed, built and launched BizApp365, a multi-tenant cloud ERP platform for small and medium businesses, covering accounting, inventory, CRM, HR, VAN sales and silent printing.</p>
-        <ul class="product-points">
-            <li>Architected the multi-tenant data model and role-based access control so that multiple client organisations run securely on shared infrastructure with isolated data.</li>
-            <li>Developed the full application front to back, building a responsive React and Vite interface with bilingual English and Arabic support for the regional market.</li>
-            <li>Built and integrated REST APIs across accounting, stock, sales and payroll modules, including document and invoice generation with direct silent printing for high-volume counter operations.</li>
-        </ul>
-        <a class="btn btn-primary" href="https://bizapp365.com" target="_blank" rel="noopener">Visit bizapp365.com →</a>
-      </div>
-      <div class="module-grid reveal">
-            <div class="module">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="6" y1="20" x2="6" y2="13"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="18" y1="20" x2="18" y2="9"/></svg></span>
-              <b>Accounting</b><span>Ledgers, invoicing, VAT-ready reporting</span>
-            </div>
-            <div class="module">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.3 7 12 12 20.7 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg></span>
-              <b>Inventory</b><span>Multi-warehouse stock and valuation</span>
-            </div>
-            <div class="module">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-              <b>CRM</b><span>Customers, quotations and follow-ups</span>
-            </div>
-            <div class="module">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></span>
-              <b>HR &amp; Payroll</b><span>Employees, attendance and salaries</span>
-            </div>
-            <div class="module">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="1" y="5" width="14" height="11" rx="1"/><path d="M15 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/></svg></span>
-              <b>VAN Sales</b><span>Mobile route sales and settlements</span>
-            </div>
-            <div class="module">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4H4a2 2 0 0 0-2 2z"/><line x1="7" y1="18" x2="8" y2="18"/><line x1="12" y1="18" x2="13" y2="18"/><line x1="17" y1="18" x2="18" y2="18"/></svg></span>
-              <b>Production</b><span>Work orders, BOM and production costing</span>
-            </div>
+    <div class="wrap">
+      <div class="product-layout">
+        <div class="product-copy reveal">
+          <p class="kicker">Product</p>
+          <h2>BizApp365 — cloud ERP for growing SMEs</h2>
+          <p class="lede">Independently designed, built and launched a multi-tenant cloud ERP covering accounting, inventory, CRM, HR, VAN sales and silent printing.</p>
+          <ul class="product-points">
+            <li>Architected the multi-tenant data model and role-based access control for secure shared infrastructure with isolated client data.</li>
+            <li>Built a responsive React and Vite interface with bilingual English and Arabic support for the regional market.</li>
+            <li>Integrated REST APIs across accounting, stock, sales and payroll, including silent printing for high-volume counter operations.</li>
+          </ul>
+          <a class="btn btn-primary" href="https://bizapp365.com" target="_blank" rel="noopener noreferrer">
+            Visit bizapp365.com
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+          </a>
+        </div>
+        <div class="module-grid" role="list">
+          <article class="module reveal" role="listitem">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V9"/><path d="M10 19V5"/><path d="M16 19v-7"/><path d="M22 19V8"/></svg></span>
+            <h3>Accounting</h3>
+            <p>Ledgers, invoicing, VAT-ready reporting</p>
+          </article>
+          <article class="module reveal" role="listitem">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
+            <h3>Inventory</h3>
+            <p>Multi-warehouse stock and valuation</p>
+          </article>
+          <article class="module reveal" role="listitem">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <h3>CRM</h3>
+            <p>Customers, quotations and follow-ups</p>
+          </article>
+          <article class="module reveal" role="listitem">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></span>
+            <h3>HR &amp; Payroll</h3>
+            <p>Employees, attendance and salaries</p>
+          </article>
+          <article class="module reveal" role="listitem">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 17h14v-5H5z"/><path d="M7 17v2"/><path d="M17 17v2"/><path d="M3 12h2l2-5h10l2 5h2"/></svg></span>
+            <h3>VAN Sales</h3>
+            <p>Mobile route sales and settlements</p>
+          </article>
+          <article class="module reveal" role="listitem">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M7 13h10"/><path d="M9 18h6"/></svg></span>
+            <h3>Production</h3>
+            <p>Work orders, BOM and production costing</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="skills" style="background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <section id="skills">
     <div class="wrap">
       <div class="section-head reveal">
         <p class="kicker">Capabilities</p>
         <h2>Technical skills</h2>
+        <p>Hands-on depth across cloud platforms, automation, infrastructure and delivery.</p>
       </div>
       <div class="skills-grid">
-        <div class="skill card reveal">
+        <article class="skill reveal">
           <h3>Cloud &amp; DevOps</h3>
           <div class="tags">
-          <span class="tag">Microsoft Azure</span>
-          <span class="tag">Amazon Web Services (AWS)</span>
-          <span class="tag">Azure DevOps</span>
-          <span class="tag">CI/CD pipeline design</span>
-          <span class="tag">Git &amp; version control</span>
-          <span class="tag">Infrastructure as Code (ARM templates</span>
-          <span class="tag">AWS CloudFormation)</span>
-          <span class="tag">containers (Docker)</span>
-          <span class="tag">release management</span>
-          <span class="tag">monitoring &amp; alerting (Azure Monitor</span>
-          <span class="tag">AWS CloudWatch)</span>
-          <span class="tag">identity &amp; access management (Entra ID</span>
-          <span class="tag">AWS IAM)</span>
+            <span class="tag">Microsoft Azure</span>
+            <span class="tag">Amazon Web Services</span>
+            <span class="tag">Azure DevOps</span>
+            <span class="tag">CI/CD pipelines</span>
+            <span class="tag">Git</span>
+            <span class="tag">ARM templates</span>
+            <span class="tag">AWS CloudFormation</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Azure Monitor</span>
+            <span class="tag">AWS CloudWatch</span>
+            <span class="tag">Entra ID</span>
+            <span class="tag">AWS IAM</span>
           </div>
-        </div>
-        <div class="skill card reveal">
+        </article>
+        <article class="skill reveal">
           <h3>Software Development</h3>
           <div class="tags">
-          <span class="tag">Full-stack web application development</span>
-          <span class="tag">React</span>
-          <span class="tag">Vite</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">HTML5 and CSS3</span>
-          <span class="tag">responsive UI design</span>
-          <span class="tag">REST API design and integration</span>
-          <span class="tag">multi-tenant SaaS architecture</span>
-          <span class="tag">relational database design</span>
-          <span class="tag">role-based access control</span>
-          <span class="tag">bilingual (English / Arabic) interfaces</span>
-          <span class="tag">Git and version control</span>
+            <span class="tag">Full-stack web apps</span>
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML5 &amp; CSS3</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Multi-tenant SaaS</span>
+            <span class="tag">Database design</span>
+            <span class="tag">RBAC</span>
+            <span class="tag">English / Arabic UI</span>
           </div>
-        </div>
-        <div class="skill card reveal">
+        </article>
+        <article class="skill reveal">
           <h3>Automation &amp; AI</h3>
           <div class="tags">
-          <span class="tag">AI-driven automation of IT workflows</span>
-          <span class="tag">Microsoft Power Automate</span>
-          <span class="tag">PowerShell scripting</span>
-          <span class="tag">Bash</span>
-          <span class="tag">automated ticket triage &amp; routing</span>
-          <span class="tag">automated user onboarding/offboarding</span>
-          <span class="tag">scripted reporting</span>
-          <span class="tag">AI assistants and agent-based task automation</span>
+            <span class="tag">AI-driven IT workflows</span>
+            <span class="tag">Power Automate</span>
+            <span class="tag">PowerShell</span>
+            <span class="tag">Bash</span>
+            <span class="tag">Ticket triage</span>
+            <span class="tag">Onboarding automation</span>
+            <span class="tag">Scripted reporting</span>
           </div>
-        </div>
-        <div class="skill card reveal">
+        </article>
+        <article class="skill reveal">
           <h3>Servers &amp; Virtualisation</h3>
           <div class="tags">
-          <span class="tag">Windows Server 2012/2016/2019/2022</span>
-          <span class="tag">Active Directory &amp; ADC</span>
-          <span class="tag">DNS</span>
-          <span class="tag">DHCP</span>
-          <span class="tag">Group Policy</span>
-          <span class="tag">File &amp; Print Services</span>
-          <span class="tag">Microsoft Exchange Server</span>
-          <span class="tag">VMware ESXi</span>
-          <span class="tag">Microsoft Hyper-V</span>
-          <span class="tag">QNAP NAS</span>
-          <span class="tag">server hardware &amp; RAID</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">Active Directory</span>
+            <span class="tag">DNS / DHCP</span>
+            <span class="tag">Group Policy</span>
+            <span class="tag">Exchange Server</span>
+            <span class="tag">VMware ESXi</span>
+            <span class="tag">Hyper-V</span>
+            <span class="tag">QNAP NAS</span>
           </div>
-        </div>
-        <div class="skill card reveal">
+        </article>
+        <article class="skill reveal">
           <h3>Networking</h3>
           <div class="tags">
-          <span class="tag">LAN / WAN</span>
-          <span class="tag">Cisco routers &amp; switches</span>
-          <span class="tag">routing &amp; switching</span>
-          <span class="tag">VLANs</span>
-          <span class="tag">structured cabling</span>
-          <span class="tag">wireless access points &amp; controllers</span>
-          <span class="tag">VPN &amp; site-to-site connectivity</span>
-          <span class="tag">network printing</span>
+            <span class="tag">LAN / WAN</span>
+            <span class="tag">Cisco</span>
+            <span class="tag">VLANs</span>
+            <span class="tag">Wireless</span>
+            <span class="tag">VPN</span>
+            <span class="tag">Site-to-site</span>
           </div>
-        </div>
-        <div class="skill card reveal">
+        </article>
+        <article class="skill reveal">
           <h3>Security &amp; Infrastructure</h3>
           <div class="tags">
-          <span class="tag">Sophos and Fortinet FortiGate firewalls</span>
-          <span class="tag">endpoint protection</span>
-          <span class="tag">patch management</span>
-          <span class="tag">backup &amp; disaster recovery</span>
-          <span class="tag">IP CCTV &amp; enterprise NVR</span>
-          <span class="tag">biometric and door access control systems</span>
-          <span class="tag">time &amp; attendance systems</span>
+            <span class="tag">Sophos</span>
+            <span class="tag">FortiGate</span>
+            <span class="tag">Endpoint protection</span>
+            <span class="tag">Patch management</span>
+            <span class="tag">Backup &amp; DR</span>
+            <span class="tag">CCTV &amp; access control</span>
           </div>
-        </div>
-        <div class="skill card reveal">
-          <h3>End-User &amp; Voice</h3>
-          <div class="tags">
-          <span class="tag">Windows client OS deployment &amp; imaging</span>
-          <span class="tag">Microsoft 365 and Outlook</span>
-          <span class="tag">desktop/laptop/peripheral support</span>
-          <span class="tag">PABX &amp; IP PBX</span>
-          <span class="tag">IP telephony</span>
-          <span class="tag">enterprise Xerox multifunction devices</span>
-          <span class="tag">GPS vehicle tracking</span>
-          <span class="tag">remote support tools</span>
-          </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -249,30 +268,60 @@
         <h2>Certifications</h2>
       </div>
       <div class="cert-grid">
-        <div class="cert card reveal featured">
+        <article class="cert featured reveal">
           <div class="mark" aria-hidden="true">AZ</div>
-          <div><b>Microsoft Certified: DevOps Engineer Expert</b><span>AZ-400 · Expert level</span></div>
-        </div>
-        <div class="cert card reveal featured">
+          <div>
+            <h3>Microsoft Certified: DevOps Engineer Expert</h3>
+            <p>AZ-400 · Expert level</p>
+          </div>
+        </article>
+        <article class="cert featured reveal">
           <div class="mark" aria-hidden="true">AWS</div>
-          <div><b>AWS Certified DevOps Engineer</b><span>Amazon Web Services · Professional level</span></div>
-        </div>
-        <div class="cert card reveal">
+          <div>
+            <h3>AWS Certified DevOps Engineer</h3>
+            <p>Amazon Web Services · Professional level</p>
+          </div>
+        </article>
+        <article class="cert reveal">
           <div class="mark" aria-hidden="true">MS</div>
-          <div><b>MCITP</b><span>Microsoft Certified IT Professional</span></div>
-        </div>
-        <div class="cert card reveal">
+          <div>
+            <h3>MCITP</h3>
+            <p>Microsoft Certified IT Professional</p>
+          </div>
+        </article>
+        <article class="cert reveal">
           <div class="mark" aria-hidden="true">EX</div>
-          <div><b>Microsoft Exchange Server 2007</b><span>Enterprise messaging administration</span></div>
-        </div>
-        <div class="cert card reveal">
+          <div>
+            <h3>Microsoft Exchange Server 2007</h3>
+            <p>Enterprise messaging administration</p>
+          </div>
+        </article>
+        <article class="cert reveal">
           <div class="mark" aria-hidden="true">HW</div>
-          <div><b>Diploma in Computer Hardware &amp; Networking</b><span>IIHT Bangalore · 2006</span></div>
-        </div>
-        <div class="cert card reveal">
+          <div>
+            <h3>Diploma in Computer Hardware &amp; Networking</h3>
+            <p>IIHT Bangalore · 2006</p>
+          </div>
+        </article>
+        <article class="cert reveal">
           <div class="mark" aria-hidden="true">NW</div>
-          <div><b>Advanced Networking</b><span>Government ITI, Kasaragod</span></div>
-        </div>
+          <div>
+            <h3>Advanced Networking</h3>
+            <p>Government ITI, Kasaragod</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap closing-inner reveal">
+      <p class="kicker">Next step</p>
+      <h2>Discuss a role or project</h2>
+      <p>Message on WhatsApp for the CV password, or unlock and download the full profile PDF.</p>
+      <div class="closing-cta">
+        <a class="btn btn-primary" href="https://wa.me/971582885633" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+        <a class="btn btn-secondary locked-cv" href="Afseer-KP-CV.pdf" download data-locked="cv">Download CV</a>
       </div>
     </div>
   </section>
@@ -293,19 +342,27 @@
 </a>
 
 <div class="lock-modal" id="lockModal" hidden>
-  <div class="lock-modal-backdrop" data-lock-close></div>
-  <div class="lock-dialog" role="dialog" aria-modal="true" aria-labelledby="lockTitle">
-    <button type="button" class="lock-close" data-lock-close aria-label="Close">&times;</button>
+  <div class="lock-modal-backdrop" data-lock-close tabindex="-1"></div>
+  <div class="lock-dialog" role="dialog" aria-modal="true" aria-labelledby="lockTitle" aria-describedby="lockDesc">
+    <button type="button" class="lock-close" data-lock-close aria-label="Close dialog">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
     <div class="lock-icon" aria-hidden="true">
       <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
     </div>
     <h3 id="lockTitle">Protected content</h3>
-    <p>Please enter the password. To obtain the password, please contact me via WhatsApp.</p>
+    <p id="lockDesc">Please enter the password. To obtain the password, please contact me via WhatsApp.</p>
     <form id="lockForm" autocomplete="off">
-      <label class="visually-hidden" for="lockPassword">Password</label>
-      <input id="lockPassword" type="password" name="password" placeholder="Enter password" required autocomplete="current-password">
-      <p class="lock-error" id="lockError" hidden>Incorrect password. Please try again.</p>
-      <button type="submit" class="btn btn-primary">Unlock</button>
+      <label class="field-label" for="lockPassword">Password</label>
+      <div class="password-field">
+        <input id="lockPassword" type="password" name="password" placeholder="Enter password" required autocomplete="current-password">
+        <button type="button" class="password-toggle" id="passwordToggle" aria-label="Show password" aria-pressed="false">
+          <svg class="icon-eye" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          <svg class="icon-eye-off" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M17.94 17.94A10.07 10.07 0 0 1 12 19c-6.5 0-10-7-10-7a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c6.5 0 10 7 10 7a18.5 18.5 0 0 1-2.16 3.19"/><path d="m1 1 22 22"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/></svg>
+        </button>
+      </div>
+      <p class="lock-error" id="lockError" role="alert" hidden>Incorrect password. Please try again.</p>
+      <button type="submit" class="btn btn-primary" id="unlockBtn">Unlock</button>
     </form>
   </div>
 </div>
